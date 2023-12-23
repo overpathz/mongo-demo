@@ -7,16 +7,11 @@ import org.bson.Document;
 public class Connection {
     public static void main(String[] args) {
         MongoClient mongoClient = MongoClients.create("mongodb://admin:admin123@localhost:27017");
-        MongoDatabase database = mongoClient.getDatabase("test"); // create if no exists
+
+        MongoDatabase database = mongoClient.getDatabase("");
+
         MongoCollection<Document> collection = database.getCollection("humans");
-
-        // Create a Document
-        Document doc = new Document("name", "John Doe")
-                .append("age", 30)
-                .append("city", "New York")
-                        .append("address", new Document().append("street", "Kalyny 56"));
-
-        // Insert Document
+        Document doc = new Document("name", "John Doe");
         collection.insertOne(doc);
 
         // Create a Document
