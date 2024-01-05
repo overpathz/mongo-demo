@@ -5,6 +5,7 @@ import com.mongodb.client.internal.MongoClientImpl;
 import org.bson.Document;
 
 public class Connection {
+    // 1
     public static void main(String[] args) {
         MongoClient mongoClient = MongoClients.create("mongodb://admin:admin123@localhost:27017");
 
